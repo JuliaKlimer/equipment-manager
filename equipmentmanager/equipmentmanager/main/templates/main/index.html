@@ -1,11 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>It works!</h1>
-<img src="dbmodel.jpg">
-</body>
-</html>
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+{% block content %}
+    <h2>Main page</h2>
+    {% if equipment %}
+        {% for el in equipment %}
+                <h3>{{ el.equipment }}</h3>
+                <p>{{ el.type }}</p>
+                <p>{{ el.producer }}</p>
+                <p>{{ el.owner }}</p>
+                <p>{{ el.status }}</p>
+                <p>{{ el.ownership }}</p>
+        {% endfor %}
+    {% else %}
+        <h4>No data</h4>
+    {% endif %}
+{% endblock %}
