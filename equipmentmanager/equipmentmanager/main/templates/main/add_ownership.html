@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Add ownership
+{% endblock %}
+
+{% block content %}
+    <h2>Add ownership</h2>
+    <form method="post">
+        {% csrf_token %}
+        <p>Human: {{ form.human }}</p><br>
+        <p>Equipment: {{ form.equipment }}</p><br>
+        <p>Start date of ownership: {{ form.start_date_of_ownership }}</p><br>
+        <p>Choose status: {{ form.status }}</p><br>
+        <button type="submit" class="btn btn-success">Add</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}

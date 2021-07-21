@@ -14,7 +14,12 @@
         <span class="fs-4">Equipment Manager</span>
       </a>
       <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-        <a class="me-3 py-2 text-dark text-decoration-none" href="">Add equipment</a>
+          <a class="me-3 py-2 text-dark text-decoration-none" href="{% url 'add-status' %}">Add status</a>
+          <a class="me-3 py-2 text-dark text-decoration-none" href="{% url 'add-type' %}">Add type</a>
+          <a class="me-3 py-2 text-dark text-decoration-none" href="{% url 'add-producer' %}">Add producer</a>
+          <a class="me-3 py-2 text-dark text-decoration-none" href="{% url 'add-human' %}">Add human</a>
+          <a class="me-3 py-2 text-dark text-decoration-none" href="{% url 'add-equipment' %}">Add equipment</a>
+          <a class="me-3 py-2 text-dark text-decoration-none" href="{% url 'add-ownership' %}">Add ownership</a>
       </nav>
     </div>
     </header>

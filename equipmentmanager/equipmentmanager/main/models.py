@@ -52,7 +52,7 @@ class Human(models.Model):
     status = models.ForeignKey('Status', on_delete=models.CASCADE)
 
     def __str__(self):
-        return str(self.pk)
+        return self.first_name #str(self.pk)
 
     def get_absolute_url(self):
         return f'/{self.id}'

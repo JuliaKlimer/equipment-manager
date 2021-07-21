@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ equipment.title }}
+{% endblock %}
+
+{% block content %}
+<div class="alert alert-success mt-2">
+    <h1>{{ equipment.name }}</h1>
+    <p>Type: {{ equipment.type }}</p>
+    <p>Producer: {{ equipment.producer }}</p>
+    <p>Price: {{ equipment.price }}</p>
+    <p>Status: {{ equipment.status }}</p>
+    <a href="{% url 'equipment-update' equipment.id %}" class="btn btn-info">Update equipment</a>
+    <a href="{% url 'equipment-delete' equipment.id %}" class="btn btn-danger">Delete</a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Deleting
+{% endblock %}
+
+{% block content %}
+    <h3>Are you sure you want to delete all information about this equipment?</h3>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}

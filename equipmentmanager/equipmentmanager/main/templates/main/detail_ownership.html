@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ ownership.title }}
+{% endblock %}
+
+{% block content %}
+<div class="alert alert-success mt-2">
+    <p>Start date of ownership: {{ ownership.start_date_of_ownership }}</p>
+    <a href="{% url 'ownership-update' ownership.id %}" class="btn btn-info">Update ownership</a>
+    <a href="{% url 'ownership-delete' ownership.id %}" class="btn btn-danger">Delete</a>
+</div>
+
+{% endblock %}

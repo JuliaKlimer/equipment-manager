@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Add producer
+{% endblock %}
+
+{% block content %}
+    <h2>Add producer of equipment</h2>
+    <form method="post">
+        {% csrf_token %}
+        <p>Name: {{ form.name }}</p><br>
+        <p>Country: {{ form.country }}</p><br>
+        <p>Year of foundation: {{ form.year_of_foundation }}</p><br>
+        <p>Choose status: {{ form.status }}</p><br>
+        <button type="submit" class="btn btn-success">Add</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}

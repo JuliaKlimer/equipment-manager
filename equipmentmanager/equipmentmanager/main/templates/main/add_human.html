@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Add human
+{% endblock %}
+
+{% block content %}
+    <h2>Add human</h2>
+    <form method="post">
+        {% csrf_token %}
+        <p>First name: {{ form.first_name }}</p><br>
+        <p>Last name: {{ form.last_name }}</p><br>
+        <p>Phone: {{ form.phone }}</p><br>
+        <p>E-mail: {{ form.email }}</p><br>
+        <p>Choose status: {{ form.status }}</p><br>
+        <button type="submit" class="btn btn-success">Add</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}

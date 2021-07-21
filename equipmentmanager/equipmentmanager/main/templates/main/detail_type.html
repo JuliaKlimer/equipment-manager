@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ type.title }}
+{% endblock %}
+
+{% block content %}
+<div class="alert alert-success mt-2">
+    <p>Type: {{ type.name }}</p>
+    <a href="{% url 'type-update' type.id %}" class="btn btn-info">Update type</a>
+    <a href="{% url 'type-delete' type.id %}" class="btn btn-danger">Delete</a>
+</div>
+
+{% endblock %}

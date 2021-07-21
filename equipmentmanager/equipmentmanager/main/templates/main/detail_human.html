@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ human.title }}
+{% endblock %}
+
+{% block content %}
+<div class="alert alert-success mt-2">
+    <h1>{{ human.first_name }}</h1>
+    <p>Type: {{ human.last_name }}</p>
+    <p>Producer: {{ human.phone }}</p>
+    <p>Price: {{ human.email }}</p>
+    <p>Status: {{ human.status }}</p>
+    <a href="{% url 'human-update' human.id %}" class="btn btn-info">Update human</a>
+    <a href="{% url 'human-delete' human.id %}" class="btn btn-danger">Delete</a>
+</div>
+
+{% endblock %}

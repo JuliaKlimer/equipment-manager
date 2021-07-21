@@ -1,15 +1,14 @@
 {% extends 'main/base.html' %}
 
 {% block title %}
-    Add posts
+    Add status
 {% endblock %}
 
 {% block content %}
-    <h2>Add post</h2>
+    <h2>Add status of entity</h2>
     <form method="post">
         {% csrf_token %}
-        {{ form.title }}<br>
-        {{ form.post }}<br>
+        <p>Name: {{ form.name }}</p><br>
         <button type="submit" class="btn btn-success">Add</button>
         <span>{{ error }}</span>
     </form>

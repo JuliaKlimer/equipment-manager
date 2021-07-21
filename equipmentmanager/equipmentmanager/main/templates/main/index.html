@@ -4,15 +4,57 @@
 {{ title }}
 {% endblock %}
 {% block content %}
-    <h2>Main page</h2>
+    <h1>Main page</h1>
     {% if equipment %}
         {% for el in equipment %}
-                <h3>Name: {{ el.equipment }}</h3>
+            <div class="alert alert-success mt-2">
+                <p>Name: {{ el.name }}</p>
                 <p>Type: {{ el.type }}</p>
                 <p>Producer: {{ el.producer }}</p>
-                <p>Owner: {{ el.human }}</p>
                 <p>Status: {{ el.status }}</p>
-                <p>Start date of ownership: {{ el.ownership }}</p>
+                <a href="{% url 'equipment-detail' el.id %}" class="btn btn-success">Show more...</a>
+            </div>
+        {% endfor %}
+
+
+        {% for el in human %}
+            <div class="alert alert-success mt-2">
+                <p>Name: {{ el.first_name }}</p>
+                <p>Type: {{ el.last_name }}</p>
+                <p>Producer: {{ el.phone }}</p>
+                <p>Status: {{ el.email }}</p>
+                <a href="{% url 'human-detail' el.id %}" class="btn btn-success">Show more...</a>
+            </div>
+        {% endfor %}
+
+        {% for el in producer %}
+            <div class="alert alert-success mt-2">
+                <p>Name: {{ el.name }}</p>
+                <p>Type: {{ el.country }}</p>
+                <p>Producer: {{ el.year_of_foundation }}</p>
+                <p>Status: {{ el.status }}</p>
+                <a href="{% url 'producer-detail' el.id %}" class="btn btn-success">Show more...</a>
+            </div>
+        {% endfor %}
+        {% for el in type %}
+            <div class="alert alert-success mt-2">
+                <p>Name: {{ el.name }}</p>
+                <p>Status: {{ el.status }}</p>
+                <a href="{% url 'type-detail' el.id %}" class="btn btn-success">Show more...</a>
+            </div>
+        {% endfor %}
+        {% for el in ownership %}
+            <div class="alert alert-success mt-2">
+                <p>Name: {{ el.start_date_of_ownership }}</p>
+                <p>Status: {{ el.status }}</p>
+                <a href="{% url 'ownership-detail' el.id %}" class="btn btn-success">Show more...</a>
+            </div>
+        {% endfor %}
+        {% for el in status %}
+            <div class="alert alert-success mt-2">
+                <p>Name: {{ el.name }}</p>
+                <a href="{% url 'status-detail' el.id %}" class="btn btn-success">Show more...</a>
+            </div>
         {% endfor %}
     {% else %}
         <h4>No data</h4>
