@@ -7,12 +7,12 @@
     <h2>Main page</h2>
     {% if equipment %}
         {% for el in equipment %}
-                <h3>{{ el.equipment }}</h3>
-                <p>{{ el.type }}</p>
-                <p>{{ el.producer }}</p>
-                <p>{{ el.owner }}</p>
-                <p>{{ el.status }}</p>
-                <p>{{ el.ownership }}</p>
+                <h3>Name: {{ el.equipment }}</h3>
+                <p>Type: {{ el.type }}</p>
+                <p>Producer: {{ el.producer }}</p>
+                <p>Owner: {{ el.human }}</p>
+                <p>Status: {{ el.status }}</p>
+                <p>Start date of ownership: {{ el.ownership }}</p>
         {% endfor %}
     {% else %}
         <h4>No data</h4>

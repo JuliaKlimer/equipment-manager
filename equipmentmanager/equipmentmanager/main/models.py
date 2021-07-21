@@ -52,7 +52,7 @@ class Human(models.Model):
     status = models.ForeignKey('Status', on_delete=models.CASCADE)
 
     def __str__(self):
-        return '{} {}'.format(self.first_name, self.last_name)
+        return str(self.pk)
 
     def get_absolute_url(self):
         return f'/{self.id}'
@@ -64,7 +64,7 @@ class Ownership(models.Model):
     start_date_of_ownership = models.DateField()
 
     def __str__(self):
-       return self.start_date_of_ownership
+        return str(self.pk)
 
     def get_absolute_url(self):
         return f'/{self.id}'
