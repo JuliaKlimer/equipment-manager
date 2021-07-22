@@ -5,69 +5,10 @@
 {% endblock %}
 {% block content %}
     <h1>Main page</h1>
-    {% if equipment %}
-        {% for el in equipment %}
-
-            <div class="alert alert-success mt-2">
-                <h3>Equipment</h3>
-                <p>Name: {{ el.name }}</p>
-                <p>Type: {{ el.type }}</p>
-                <p>Producer: {{ el.producer }}</p>
-                <p>Status: {{ el.status }}</p>
-                <a href="{% url 'equipment-detail' el.id %}" class="btn btn-success">Show more...</a>
-            </div>
-        {% endfor %}
-        {% for el in human %}
-            <div class="alert alert-success mt-2">
-                <h3>Owner</h3>
-                <p>First name: {{ el.first_name }}</p>
-                <p>Last name: {{ el.last_name }}</p>
-                <p>Phone: {{ el.phone }}</p>
-                <p>E-mail: {{ el.email }}</p>
-                <p>Status: {{ el.status }}</p>
-                <a href="{% url 'human-detail' el.id %}" class="btn btn-success">Show more...</a>
-            </div>
-        {% endfor %}
-        {% for el in producer %}
-            <div class="alert alert-success mt-2">
-                <h5>Producer</h5>
-                <p>Name: {{ el.name }}</p>
-                <p>Country: {{ el.country }}</p>
-                <p>Year of foundation: {{ el.year_of_foundation }}</p>
-                <p>Status: {{ el.status }}</p>
-                <a href="{% url 'producer-detail' el.id %}" class="btn btn-success">Show more...</a>
-            </div>
-        {% endfor %}
-        {% for el in type %}
-            <div class="alert alert-success mt-2">
-                <h4>Type</h4>
-                <p>Name: {{ el.name }}</p>
-                <p>Status: {{ el.status }}</p>
-                <a href="{% url 'type-detail' el.id %}" class="btn btn-success">Show more...</a>
-            </div>
-        {% endfor %}
-        {% for el in ownership %}
-            <div class="alert alert-success mt-2">
-                <h3>Ownership</h3>
-                {% for el in human %}
-                <p>Owner: {{ el.first_name }} {{ el.last_name }}</p>
-                {% endfor %}
-                {% for el in equipment %}
-                <p>Equipment: {{ el.name }}</p>
-                {% endfor %}
-                <p>Start date: {{ el.start_date_of_ownership }}</p>
-                <p>Status: {{ el.status }}</p>
-                <a href="{% url 'ownership-detail' el.id %}" class="btn btn-success">Show more...</a>
-            </div>
-        {% endfor %}
-        {% for el in status %}
-            <div class="alert alert-success mt-2">
-                <h2>Status</h2>
-                <p>Name: {{ el.name }}</p>
-                <a href="{% url 'status-detail' el.id %}" class="btn btn-success">Show more...</a>
-            </div>
-        {% endfor %}
-    {% else %}
-        <h4>No data</h4>
-    {% endif %}
+    <a href="{% url 'equipment-list' %}" class="btn btn-success">Equipment</a><br>
+    <a href="{% url 'human-list' %}" class="btn btn-success">Human</a><br>
+    <a href="{% url 'producer-list' %}" class="btn btn-success">Producer</a><br>
+    <a href="{% url 'type-list' %}" class="btn btn-success">Type</a><br>
+    <a href="{% url 'ownership-list' %}" class="btn btn-success">Ownership</a><br>
+    <a href="{% url 'status-list' %}" class="btn btn-success">Status</a><br>
 {% endblock %}

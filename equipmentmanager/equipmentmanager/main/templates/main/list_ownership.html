@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ ownership.title }}
+{% endblock %}
+
+{% block content %}
+    {% for object in object_list %}
+    <a>{{object}}</a>
+    <a href="{% url 'ownership-detail' object.id %}" class="btn btn-success">Show more...</a>
+    <a href="{% url 'ownership-update' object.id %}" class="btn btn-info">Update ownership</a>
+    <a href="{% url 'ownership-delete' object.id %}" class="btn btn-danger">Delete</a><br>
+{% endfor %}
+{% endblock %}

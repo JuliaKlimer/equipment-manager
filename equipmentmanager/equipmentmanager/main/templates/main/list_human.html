@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ human.title }}
+{% endblock %}
+
+{% block content %}
+    {% for object in object_list %}
+    <a>{{object}}</a>
+    <a href="{% url 'human-detail' object.id %}" class="btn btn-success">Show more...</a>
+    <a href="{% url 'human-update' object.id %}" class="btn btn-info">Update human</a>
+    <a href="{% url 'human-delete' object.id %}" class="btn btn-danger">Delete</a><br>
+{% endfor %}
+{% endblock %}

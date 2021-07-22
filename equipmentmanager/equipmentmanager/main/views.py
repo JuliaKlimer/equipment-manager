@@ -134,8 +134,8 @@ class EquipmentDeleteView(DeleteView):
 
 class EquipmentListView(ListView):
     model = Equipment
-
     form_class = EquipmentForm
+    template_name = 'main/list_equipment.html'
 
 class HumanDetailView(DetailView):
     model = Human
@@ -152,6 +152,11 @@ class HumanDeleteView(DeleteView):
     success_url = '/'
     template_name = 'main/delete_human.html'
 
+class HumanListView(ListView):
+    model = Human
+    form_class = HumanForm
+    template_name = 'main/list_human.html'
+
 class ProducerDetailView(DetailView):
     model = Producer
     template_name = 'main/detail_producer.html'
@@ -166,6 +171,11 @@ class ProducerDeleteView(DeleteView):
     model = Producer
     success_url = '/'
     template_name = 'main/delete_producer.html'
+
+class ProducerListView(ListView):
+    model = Producer
+    form_class = ProducerForm
+    template_name = 'main/list_producer.html'
 
 class TypeDetailView(DetailView):
     model = Type
@@ -182,6 +192,11 @@ class TypeDeleteView(DeleteView):
     success_url = '/'
     template_name = 'main/delete_type.html'
 
+class TypeListView(ListView):
+    model = Type
+    form_class = TypeForm
+    template_name = 'main/list_type.html'
+
 class OwnershipDetailView(DetailView):
     model = Ownership
     template_name = 'main/detail_ownership.html'
@@ -197,6 +212,11 @@ class OwnershipDeleteView(DeleteView):
     success_url = '/'
     template_name = 'main/delete_ownership.html'
 
+class OwnershipListView(ListView):
+    model = Ownership
+    form_class = OwnershipForm
+    template_name = 'main/list_ownership.html'
+
 class StatusDetailView(DetailView):
     model = Status
     template_name = 'main/detail_status.html'
@@ -211,3 +231,8 @@ class StatusDeleteView(DeleteView):
     model = Status
     success_url = '/'
     template_name = 'main/delete_status.html'
+
+class StatusListView(ListView):
+    model = Status
+    form_class = StatusForm
+    template_name = 'main/list_status.html'
