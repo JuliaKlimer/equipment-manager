@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from main.forms import StatusForm, TypeForm, ProducerForm, HumanForm, EquipmentForm, OwnershipForm
 from .models import Equipment, Human, Ownership, Producer, Type, Status
-from django.views.generic import DetailView, DeleteView, UpdateView
+from django.views.generic import DetailView, DeleteView, UpdateView, ListView
 
 
 def index(request):
@@ -131,6 +131,11 @@ class EquipmentDeleteView(DeleteView):
     model = Equipment
     success_url = '/'
     template_name = 'main/delete_equipment.html'
+
+class EquipmentListView(ListView):
+    model = Equipment
+
+    form_class = EquipmentForm
 
 class HumanDetailView(DetailView):
     model = Human

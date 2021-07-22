@@ -7,6 +7,9 @@
 {% block content %}
 <div class="alert alert-success mt-2">
     <p>Start date of ownership: {{ ownership.start_date_of_ownership }}</p>
+    <p>Owner: {{ ownership.human }}</p>
+    <p>Equipment: {{ ownership.equipment }}</p>
+    <p>Status: {{ ownership.status }}</p>
     <a href="{% url 'ownership-update' ownership.id %}" class="btn btn-info">Update ownership</a>
     <a href="{% url 'ownership-delete' ownership.id %}" class="btn btn-danger">Delete</a>
 </div>

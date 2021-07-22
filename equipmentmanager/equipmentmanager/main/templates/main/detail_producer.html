@@ -7,10 +7,9 @@
 {% block content %}
 <div class="alert alert-success mt-2">
     <h1>{{ producer.name }}</h1>
-    <p>Type: {{ producer.year_of_foundation }}</p>
-    <p>Producer: {{ producer.country }}</p>
-    <p>Price: {{ producer.status }}</p>
-    <p>Status: {{ human.status }}</p>
+    <p>Year of foundation: {{ producer.year_of_foundation }}</p>
+    <p>Country: {{ producer.country }}</p>
+    <p>Status: {{ producer.status }}</p>
     <a href="{% url 'producer-update' producer.id %}" class="btn btn-info">Update producer</a>
     <a href="{% url 'producer-delete' producer.id %}" class="btn btn-danger">Delete</a>
 </div>

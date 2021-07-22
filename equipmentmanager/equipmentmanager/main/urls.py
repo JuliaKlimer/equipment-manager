@@ -9,6 +9,7 @@ urlpatterns = [
     path('add-human', views.add_human, name='add-human'),
     path('add-equipment', views.add_equipment, name='add-equipment'),
     path('add-ownership', views.add_ownership, name='add-ownership'),
+    path("<int:pk>/equipment-list", views.EquipmentListView.as_view(), name="equipment-list"),
     path('<int:pk>/equipment-detail', views.EquipmentDetailView.as_view(), name='equipment-detail'),
     path('<int:pk>/human-detail', views.HumanDetailView.as_view(), name='human-detail'),
     path('<int:pk>/producer-detail', views.ProducerDetailView.as_view(), name='producer-detail'),

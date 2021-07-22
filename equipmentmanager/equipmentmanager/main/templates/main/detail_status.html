@@ -6,7 +6,7 @@
 
 {% block content %}
 <div class="alert alert-success mt-2">
-    <p>Type: {{ status.name }}</p>
+    <p>Name: {{ status.name }}</p>
     <a href="{% url 'status-update' status.id %}" class="btn btn-info">Update status</a>
     <a href="{% url 'status-delete' status.id %}" class="btn btn-danger">Delete</a>
 </div>
