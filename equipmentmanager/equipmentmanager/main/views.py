@@ -27,7 +27,7 @@ def add_status(request):
         form = StatusForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('status-detail')
         else:
             error = 'Error'
     form = StatusForm()

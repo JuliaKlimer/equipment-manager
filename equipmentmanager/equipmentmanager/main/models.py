@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Status(models.Model):
     name = models.CharField(max_length=100)
@@ -7,7 +8,7 @@ class Status(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return f'/{self.id}'
+        return reverse('status-detail', args=(self.pk,))
 
 class Equipment(models.Model):
     name = models.CharField(max_length=100)
@@ -20,7 +21,7 @@ class Equipment(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return f'/{self.id}'
+        return reverse('equipment-detail', args=(self.pk,))
 
 class Producer(models.Model):
     name = models.CharField(max_length=100)
@@ -32,7 +33,7 @@ class Producer(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return f'/{self.id}'
+        return reverse('producer-detail', args=(self.pk,))
 
 class Type(models.Model):
     name = models.CharField(max_length=100)
@@ -42,7 +43,7 @@ class Type(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return f'/{self.id}'
+        return reverse('type-detail', args=(self.pk,))
 
 class Human(models.Model):
     first_name = models.CharField(max_length=50)
@@ -55,7 +56,7 @@ class Human(models.Model):
         return self.first_name #str(self.pk)
 
     def get_absolute_url(self):
-        return f'/{self.id}'
+        return reverse('human-detail', args=(self.pk,))
 
 class Ownership(models.Model):
     human = models.ForeignKey('Human', on_delete=models.CASCADE)
@@ -67,4 +68,4 @@ class Ownership(models.Model):
         return str(self.pk)
 
     def get_absolute_url(self):
-        return f'/{self.id}'
+        return reverse('ownership-detail', args=(self.pk,))

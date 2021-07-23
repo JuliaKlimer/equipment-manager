@@ -5,10 +5,17 @@
 {% endblock %}
 
 {% block content %}
-    {% for object in object_list %}
-    <a>{{object}}</a>
-    <a href="{% url 'type-detail' object.id %}" class="btn btn-success">Show more...</a>
-    <a href="{% url 'type-update' object.id %}" class="btn btn-info">Update type</a>
-    <a href="{% url 'type-delete' object.id %}" class="btn btn-danger">Delete</a><br>
-{% endfor %}
+<table border="0">
+    <tr><th>Name</th></tr>
+    <tr><td>
+        {% for object in object_list %}
+            <a>{{object}}</a>
+            <a href="{% url 'type-detail' object.id %}" class="btn btn-success">Show more...</a>
+            <a href="{% url 'type-update' object.id %}" class="btn btn-info">Update type</a>
+            <a href="{% url 'type-delete' object.id %}" class="btn btn-danger">Delete</a><br>
+        {% endfor %}
+    </td></tr>
+</table>
+
+
 {% endblock %}
