@@ -1,14 +1,25 @@
 {% extends 'main/base.html' %}
 
 {% block title %}
-{{ title }}
+Equipment Manager
 {% endblock %}
 {% block content %}
-    <h1>Main page</h1>
-    <a href="{% url 'equipment-list' %}" class="btn btn-success">Equipment</a><br>
-    <a href="{% url 'human-list' %}" class="btn btn-success">Human</a><br>
-    <a href="{% url 'producer-list' %}" class="btn btn-success">Producer</a><br>
-    <a href="{% url 'type-list' %}" class="btn btn-success">Type</a><br>
-    <a href="{% url 'ownership-list' %}" class="btn btn-success">Ownership</a><br>
-    <a href="{% url 'status-list' %}" class="btn btn-success">Status</a><br>
+    <style>
+        h1{
+            text-align: center;
+        }
+        div{
+            padding-left: 30px;
+            margin-left: 50px;
+        }
+    </style>
+    <h1>Welcome to Equipment Manager!</h1>
+    <div>
+        <a href="{% url 'equipment-list' %}" class="btn btn-success">Equipment</a><br>
+        <a href="{% url 'human-list' %}" class="btn btn-success">Human</a><br>
+        <a href="{% url 'producer-list' %}" class="btn btn-success">Producer</a><br>
+        <a href="{% url 'type-list' %}" class="btn btn-success">Type</a><br>
+        <a href="{% url 'ownership-list' %}" class="btn btn-success">Ownership</a><br>
+        <a href="{% url 'status-list' %}" class="btn btn-success">Status</a><br>
+    </div>
 {% endblock %}

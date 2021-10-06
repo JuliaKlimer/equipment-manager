@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from . import api
 
 urlpatterns = [
     path('', views.index, name='home'),
@@ -32,5 +33,17 @@ urlpatterns = [
     path('<int:pk>/producer-delete', views.ProducerDeleteView.as_view(), name='producer-delete'),
     path('<int:pk>/type-delete', views.TypeDeleteView.as_view(), name='type-delete'),
     path('<int:pk>/ownership-delete', views.OwnershipDeleteView.as_view(), name='ownership-delete'),
-    path('<int:pk>/status-delete', views.StatusDetailView.as_view(), name='status-delete')
+    path('<int:pk>/status-delete', views.StatusDetailView.as_view(), name='status-delete'),
+    path("api/status/<int:pk>/", api.StatusDetail.as_view(), name="status_api"), #by id
+    path("api/type/<int:pk>/", api.TypeDetail.as_view(), name="type-api"),  # by id
+    path("api/equipment/<int:pk>/", api.EquipmentDetail.as_view(), name="equipment-api"),  # by id
+    path("api/producer/<int:pk>/", api.ProducerDetail.as_view(), name="producer-api"),  # by id
+    path("api/human/<int:pk>/", api.HumanDetail.as_view(), name="human-api"), #by id
+    path("api/ownership/<int:pk>/", api.OwnershipDetail.as_view(), name="ownership-api"), #by id
+    path("api/status/", api.StatusView.as_view(), name="status-api-view"), #all
+    path("api/type/", api.TypeView.as_view(), name="type-api-view"),  # all
+    path("api/equipment/", api.EquipmentView.as_view(), name="equipment-api-view"),  # all
+    path("api/producer/", api.ProducerView.as_view(), name="producer-api-view"),  # all
+    path("api/human/", api.HumanView.as_view(), name="human-api-view"), #all
+    path("api/ownership/", api.OwnershipView.as_view(), name="ownership-api-view"), #all
 ]
